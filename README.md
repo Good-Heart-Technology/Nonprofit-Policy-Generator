@@ -57,7 +57,7 @@ npm start
 
 ## Important Legal Disclaimer
 
-While these policy generators were created with assistance from legal professionals, Good Heart Tech is not a law firm and does not provide legal advice. The tools and templates provided here come with absolutely no warranty or guarantee of legal compliance.
+Good Heart Tech is not a law firm and does not provide legal advice. The tools and templates provided here come with absolutely no warranty or guarantee of legal compliance.
 
 Laws and regulations can vary significantly by region, jurisdiction, and industry. The generated policies may not be legally compliant in your specific area or for your particular use case.
 

@@ -5,6 +5,13 @@
     --uranian: #a0ddff;
     --rich-black: #091D20;
     --white: #FFFFFF;
+    
+    /* Dark theme colors */
+    --dark-bg: #121212;
+    --dark-surface: #1e1e1e;
+    --dark-border: #333333;
+    --dark-text: #e0e0e0;
+    --dark-secondary: #b0b0b0;
 }
 
 * {
@@ -20,6 +27,12 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+}
+
+/* Dark Theme */
+body.dark-theme {
+    background-color: var(--dark-bg);
+    color: var(--dark-text);
 }
 
 /* Header Styles */
@@ -54,7 +67,7 @@ body {
 /* Policy Grid */
 .policy-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(2, 1fr); /* Changed to 2x2 grid */
     gap: 2rem;
     margin-bottom: 3rem;
 }
@@ -62,15 +75,33 @@ body {
 .policy-tile {
     background: var(--white);
     border-radius: 0.5rem;
-    padding: 2rem;
+    padding: 3rem 2rem; /* Increased padding for bigger tiles */
     text-align: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 300px; /* Set minimum height for tiles */
+    text-decoration: none; /* Remove underline from links */
+    color: inherit; /* Inherit text color */
+    cursor: pointer;
+}
+
+.dark-theme .policy-tile {
+    background: var(--dark-surface);
+    color: var(--dark-text);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .policy-tile:hover:not(.disabled) {
     transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.dark-theme .policy-tile:hover:not(.disabled) {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
 }
 
 .policy-tile.disabled {
@@ -78,16 +109,23 @@ body {
     cursor: not-allowed;
 }
 
+.icon-container {
+    margin-bottom: 1.5rem;
+}
+
 .policy-tile i {
-    font-size: 3rem;
+    font-size: 4rem; /* Larger icons */
     color: var(--cornflower);
-    margin-bottom: 1rem;
 }
 
 .policy-tile h2 {
     color: var(--charcoal);
     margin-bottom: 1.5rem;
-    font-size: 1.25rem;
+    font-size: 1.5rem; /* Larger text */
+}
+
+.dark-theme .policy-tile h2 {
+    color: var(--dark-text);
 }
 
 .launch-btn {
@@ -98,14 +136,17 @@ body {
     border-radius: 2rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    font-weight: 600;
+    width: 80%;
+    margin-top: auto;
 }
 
-.launch-btn:hover:not([disabled]) {
+.launch-btn:hover:not(.disabled-btn) {
     background: var(--uranian);
     color: var(--rich-black);
 }
 
-.launch-btn[disabled] {
+.disabled-btn {
     background: var(--gray);
     cursor: not-allowed;
 }
@@ -130,6 +171,11 @@ body {
     align-items: center;
 }
 
+.dark-theme .faq-toggle {
+    background: var(--cornflower);
+    color: var(--white);
+}
+
 .faq-content {
     display: none;
     padding: 1rem;
@@ -137,6 +183,11 @@ body {
     background: var(--white);
     border-radius: 0.5rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.dark-theme .faq-content {
+    background: var(--dark-surface);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .faq-content.show {
@@ -152,9 +203,17 @@ body {
     border-radius: 0.5rem;
 }
 
+.dark-theme .disclaimer {
+    background: rgba(255, 255, 255, 0.05);
+}
+
 .disclaimer h2 {
     color: var(--charcoal);
     margin-bottom: 1rem;
+}
+
+.dark-theme .disclaimer h2 {
+    color: var(--dark-text);
 }
 
 .disclaimer p {

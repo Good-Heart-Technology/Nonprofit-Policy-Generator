@@ -19,7 +19,13 @@ function toggleFAQ() {
 }
 
 // Generator launch function
-function launchGenerator(path) {
-    // You can customize this function based on your needs
-    window.location.href = path;
+function launchGenerator(path, event) {
+    // If this function was called from an onclick event on an <a> tag,
+    // prevent the default behavior to handle it ourselves
+    if (event) {
+        event.preventDefault();
+    }
+    
+    // Open in a new tab
+    window.open(path, '_blank');
 } 
