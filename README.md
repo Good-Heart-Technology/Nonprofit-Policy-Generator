@@ -39,22 +39,6 @@ This application is fully open source, allowing complete transparency in our pol
    - Environment variables: (none required)
 7. Click "Deploy site"
 
-### Local Development
-
-```bash
-# Install dependencies
-npm install
-
-# Start development server
-npm run dev
-
-# Build for production
-npm run build
-
-# Start production server
-npm start
-```
-
 ## Important Legal Disclaimer
 
 Good Heart Tech is not a law firm and does not provide legal advice. The tools and templates provided here come with absolutely no warranty or guarantee of legal compliance.
