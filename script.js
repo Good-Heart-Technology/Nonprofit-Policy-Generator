@@ -15,14 +15,14 @@ function toggleFAQ() {
         faqIcon.classList.add('fa-chevron-up');
         // Rotate the icon container
         if (toggleIcon) {
-            toggleIcon.style.transform = 'rotate(180deg)';
+            toggleIcon.classList.add('rotated');
         }
     } else {
         faqIcon.classList.remove('fa-chevron-up');
         faqIcon.classList.add('fa-chevron-down');
         // Reset the icon container rotation
         if (toggleIcon) {
-            toggleIcon.style.transform = 'rotate(0)';
+            toggleIcon.classList.remove('rotated');
         }
     }
 }

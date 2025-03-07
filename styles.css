@@ -139,10 +139,23 @@ body.dark-theme {
     font-weight: 600;
     width: 80%;
     margin-top: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.launch-btn i {
+    font-size: 0.875rem;
+    color: var(--white);
 }
 
 .launch-btn:hover:not(.disabled-btn) {
     background: var(--uranian);
+    color: var(--rich-black);
+}
+
+.launch-btn:hover:not(.disabled-btn) i {
     color: var(--rich-black);
 }
 
@@ -221,6 +234,10 @@ body.dark-theme {
     border-radius: 50%;
     margin-left: 10px;
     transition: transform 0.3s ease;
+}
+
+.toggle-icon.rotated {
+    transform: rotate(180deg);
 }
 
 .dark-theme .faq-toggle {
