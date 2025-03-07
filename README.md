@@ -1,54 +1,68 @@
 # Nonprofit Policy Generator
 
-A modern web application for generating various policies for nonprofit organizations.
+Created and hosted by [Good Heart Tech](https://goodheart.tech), this application helps nonprofit organizations generate essential policies through an intuitive wizard interface.
 
-## Features
+## About Good Heart Tech
+
+Good Heart Tech is dedicated to supporting nonprofit organizations by providing accessible, technology-driven solutions. We believe in empowering nonprofits with the tools they need to operate effectively and securely in the digital age.
+
+## About the Application
+
+This application provides interactive policy generators for:
 
 - Privacy Policy & Cookies Policy Generator
 - Acceptable Use Policy Generator (Coming Soon)
 - Artificial Intelligence Policy Generator (Coming Soon)
 - Mobile Device Policy Generator (Coming Soon)
 
-## Tech Stack
+### How It Works
 
-- Next.js 14
-- React 18
-- Tailwind CSS
-- TypeScript
-- React Icons
+When you launch any of the generators, you'll be guided through a series of questions about your organization. Based on your responses, the system will instantly generate a customized policy document that aligns with your organization's needs.
 
-## Getting Started
+### Open Source Commitment
 
-1. Install dependencies:
-```bash
-npm install
-```
+This application is fully open source, allowing complete transparency in our policy generation process. You can review all aspects of how policies are generated, ensuring trust and reliability in the final output.
 
-2. Run the development server:
-```bash
-npm run dev
-```
+## Quick Start
 
-3. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Installation through Cloudflare Pages
 
-## Deployment with Cloudflare Pages
-
-1. Push your code to a GitHub repository
-2. Log in to your Cloudflare account
-3. Go to Pages > Create a project
-4. Connect your GitHub repository
-5. Configure the build settings:
+1. Fork this repository to your GitHub account
+2. Sign up for a [Cloudflare](https://cloudflare.com) account if you haven't already
+3. Go to the Cloudflare Pages dashboard
+4. Click "Create a project"
+5. Connect your GitHub account and select this repository
+6. Configure with the following settings:
    - Framework preset: Next.js
    - Build command: `npm run build`
    - Build output directory: `.next`
-6. Deploy!
+   - Environment variables: (none required)
+7. Click "Deploy site"
 
-## Development
+### Local Development
 
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm start` - Start production server
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Start production server
+npm start
+```
+
+## Important Legal Disclaimer
+
+While these policy generators were created with assistance from legal professionals, Good Heart Tech is not a law firm and does not provide legal advice. The tools and templates provided here come with absolutely no warranty or guarantee of legal compliance.
+
+Laws and regulations can vary significantly by region, jurisdiction, and industry. The generated policies may not be legally compliant in your specific area or for your particular use case.
+
+**We strongly recommend having any generated policy reviewed and updated by qualified legal counsel before implementation or distribution to ensure it meets your specific needs and complies with all applicable laws and regulations.**
 
 ## License
 
-This project is proprietary and confidential. 
+This project is open source and available under the MIT License. However, the policy templates and generation logic are proprietary to Good Heart Tech. 
