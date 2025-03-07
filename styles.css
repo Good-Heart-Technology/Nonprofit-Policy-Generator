@@ -1,0 +1,195 @@
+:root {
+    --cornflower: #7189ff;
+    --charcoal: #394053;
+    --gray: #808080;
+    --uranian: #a0ddff;
+    --rich-black: #091D20;
+    --white: #FFFFFF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.6;
+    color: var(--rich-black);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header Styles */
+.header {
+    background-color: var(--cornflower);
+    color: var(--white);
+    padding: 2rem;
+    text-align: center;
+}
+
+.provider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.logo {
+    height: 2rem;
+}
+
+/* Main Content Styles */
+.main-content {
+    flex: 1;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Policy Grid */
+.policy-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.policy-tile {
+    background: var(--white);
+    border-radius: 0.5rem;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.policy-tile:hover:not(.disabled) {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.policy-tile.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.policy-tile i {
+    font-size: 3rem;
+    color: var(--cornflower);
+    margin-bottom: 1rem;
+}
+
+.policy-tile h2 {
+    color: var(--charcoal);
+    margin-bottom: 1.5rem;
+    font-size: 1.25rem;
+}
+
+.launch-btn {
+    background: var(--cornflower);
+    color: var(--white);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.launch-btn:hover:not([disabled]) {
+    background: var(--uranian);
+    color: var(--rich-black);
+}
+
+.launch-btn[disabled] {
+    background: var(--gray);
+    cursor: not-allowed;
+}
+
+/* FAQ Section */
+.faq-section {
+    max-width: 800px;
+    margin: 0 auto 3rem;
+}
+
+.faq-toggle {
+    width: 100%;
+    padding: 1rem;
+    background: var(--uranian);
+    border: none;
+    border-radius: 0.5rem;
+    color: var(--charcoal);
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-content {
+    display: none;
+    padding: 1rem;
+    margin-top: 1rem;
+    background: var(--white);
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.faq-content.show {
+    display: block;
+}
+
+/* Disclaimer */
+.disclaimer {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: rgba(128, 128, 128, 0.1);
+    border-radius: 0.5rem;
+}
+
+.disclaimer h2 {
+    color: var(--charcoal);
+    margin-bottom: 1rem;
+}
+
+.disclaimer p {
+    margin-bottom: 1rem;
+}
+
+.disclaimer .emphasis {
+    font-weight: 600;
+}
+
+/* Footer */
+.footer {
+    background: var(--charcoal);
+    color: var(--white);
+    padding: 2rem;
+    margin-top: auto;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .policy-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+} 
