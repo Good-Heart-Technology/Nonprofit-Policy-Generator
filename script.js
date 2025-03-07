@@ -5,6 +5,7 @@ document.getElementById('current-year').textContent = new Date().getFullYear();
 function toggleFAQ() {
     const faqContent = document.getElementById('faq-answer');
     const faqIcon = document.getElementById('faq-icon');
+    const toggleIcon = faqIcon.closest('.toggle-icon');
     
     faqContent.classList.toggle('show');
     
@@ -12,9 +13,17 @@ function toggleFAQ() {
     if (faqContent.classList.contains('show')) {
         faqIcon.classList.remove('fa-chevron-down');
         faqIcon.classList.add('fa-chevron-up');
+        // Rotate the icon container
+        if (toggleIcon) {
+            toggleIcon.style.transform = 'rotate(180deg)';
+        }
     } else {
         faqIcon.classList.remove('fa-chevron-up');
         faqIcon.classList.add('fa-chevron-down');
+        // Reset the icon container rotation
+        if (toggleIcon) {
+            toggleIcon.style.transform = 'rotate(0)';
+        }
     }
 }
 
