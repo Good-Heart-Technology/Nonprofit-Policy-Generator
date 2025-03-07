@@ -49,4 +49,4 @@ Laws and regulations can vary significantly by region, jurisdiction, and industr
 
 ## License
 
-This project is open source and available under the MIT License. However, the policy templates and generation logic are proprietary to Good Heart Tech. 
+This project is open source and available under the GNU General Public License v3.0. 
