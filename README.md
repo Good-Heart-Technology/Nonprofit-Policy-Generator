@@ -23,6 +23,10 @@ When you launch any of the generators, you'll be guided through a series of ques
 
 This application is fully open source, allowing complete transparency in our policy generation process. You can review all aspects of how policies are generated, ensuring trust and reliability in the final output.
 
+### Disclaimer
+
+Please review our [full disclaimer](disclaimer.html) before using this tool. By using this application, you acknowledge that Good Heart Tech is not a law firm and does not provide legal advice.
+
 ## Quick Start
 
 ### Installation through Cloudflare Pages
