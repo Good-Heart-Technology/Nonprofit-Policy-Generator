@@ -25,7 +25,7 @@ This application is fully open source, allowing complete transparency in our pol
 
 ### Disclaimer
 
-Please review our [full disclaimer](disclaimer.html) before using this tool. By using this application, you acknowledge that Good Heart Tech is not a law firm and does not provide legal advice.
+Please review our [full disclaimer](/disclaimer.html) before using this application. The disclaimer contains important information about the limitations of our service and your responsibilities when using generated policies.
 
 ## Quick Start
 

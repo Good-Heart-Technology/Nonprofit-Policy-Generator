@@ -1,4 +1,11 @@
+/* 
+ * Nonprofit Policy Generator Styles
+ * A dark-themed stylesheet for the policy generator application
+ */
+
+/* ===== CSS Variables ===== */
 :root {
+    /* Primary colors */
     --cornflower: #7189ff;
     --cornflower-dark: #5a6ecc; /* Darker shade for better contrast */
     --charcoal: #394053;
@@ -13,8 +20,14 @@
     --dark-border: #333333;
     --dark-text: #e0e0e0;
     --dark-secondary: #b0b0b0;
+    
+    /* Disclaimer page variables */
+    --card-bg: var(--dark-surface);
+    --primary-color: var(--uranian);
+    --text-muted: var(--dark-secondary);
 }
 
+/* ===== Base Styles ===== */
 * {
     margin: 0;
     padding: 0;
@@ -24,19 +37,22 @@
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     line-height: 1.6;
-    color: var(--rich-black);
+    color: var(--dark-text);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    background-color: var(--dark-bg);
 }
 
-/* Dark Theme */
-body.dark-theme {
+/* Dark Theme - Always dark */
+body.dark-theme, 
+html.dark-mode,
+body {
     background-color: var(--dark-bg);
     color: var(--dark-text);
 }
 
-/* Header Styles */
+/* ===== Header Styles ===== */
 .header {
     background: linear-gradient(135deg, var(--cornflower) 0%, var(--cornflower-dark) 100%);
     color: var(--white);
@@ -108,7 +124,7 @@ body.dark-theme {
     transform: scale(1.05);
 }
 
-/* Main Content Styles */
+/* ===== Main Content Styles ===== */
 .main-content {
     flex: 1;
     padding: 2rem;
@@ -117,43 +133,33 @@ body.dark-theme {
     width: 100%;
 }
 
-/* Policy Grid */
+/* ===== Policy Grid ===== */
 .policy-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Changed to 2x2 grid */
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
     margin-bottom: 3rem;
 }
 
 .policy-tile {
-    background: var(--white);
+    background: var(--dark-surface);
     border-radius: 0.5rem;
-    padding: 3rem 2rem; /* Increased padding for bigger tiles */
+    padding: 3rem 2rem;
     text-align: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    min-height: 300px; /* Set minimum height for tiles */
-    text-decoration: none; /* Remove underline from links */
-    color: inherit; /* Inherit text color */
-    cursor: pointer;
-}
-
-.dark-theme .policy-tile {
-    background: var(--dark-surface);
+    min-height: 300px;
+    text-decoration: none;
     color: var(--dark-text);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
 }
 
 .policy-tile:hover:not(.disabled) {
     transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.dark-theme .policy-tile:hover:not(.disabled) {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
 }
 
@@ -167,18 +173,14 @@ body.dark-theme {
 }
 
 .policy-tile i {
-    font-size: 4rem; /* Larger icons */
+    font-size: 4rem;
     color: var(--cornflower);
 }
 
 .policy-tile h2 {
-    color: var(--charcoal);
-    margin-bottom: 1.5rem;
-    font-size: 1.5rem; /* Larger text */
-}
-
-.dark-theme .policy-tile h2 {
     color: var(--dark-text);
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
 }
 
 .launch-btn {
@@ -217,26 +219,18 @@ body.dark-theme {
     cursor: not-allowed;
 }
 
-/* Disclaimer */
+/* ===== Disclaimer Styles ===== */
 .disclaimer {
     max-width: 800px;
     margin: 0 auto 3rem;
     padding: 2rem;
-    background: rgba(128, 128, 128, 0.1);
+    background: rgba(255, 255, 255, 0.05);
     border-radius: 0.5rem;
 }
 
-.dark-theme .disclaimer {
-    background: rgba(255, 255, 255, 0.05);
-}
-
 .disclaimer h2 {
-    color: var(--charcoal);
-    margin-bottom: 1rem;
-}
-
-.dark-theme .disclaimer h2 {
     color: var(--dark-text);
+    margin-bottom: 1rem;
 }
 
 .disclaimer p {
@@ -247,7 +241,42 @@ body.dark-theme {
     font-weight: 600;
 }
 
-/* FAQ Section */
+/* Disclaimer button container */
+.disclaimer-button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+/* Disclaimer button styling */
+.disclaimer-button {
+    background: var(--cornflower);
+    color: var(--white);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.disclaimer-button:hover {
+    background: var(--uranian);
+    color: var(--rich-black);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.disclaimer-button i {
+    font-size: 1.1rem;
+}
+
+/* ===== FAQ Section ===== */
 .faq-section {
     max-width: 800px;
     margin: 0 auto 3rem;
@@ -293,24 +322,14 @@ body.dark-theme {
     transform: rotate(180deg);
 }
 
-.dark-theme .faq-toggle {
-    background: var(--cornflower);
-    color: var(--white);
-}
-
 .faq-content {
     display: none;
     padding: 1.5rem;
     margin-top: 1rem;
-    background: var(--white);
-    border-radius: 0.5rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border-left: 4px solid var(--cornflower);
-}
-
-.dark-theme .faq-content {
     background: var(--dark-surface);
+    border-radius: 0.5rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    border-left: 4px solid var(--cornflower);
 }
 
 .faq-content.show {
@@ -323,7 +342,7 @@ body.dark-theme {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Footer */
+/* ===== Footer Styles ===== */
 .footer {
     background: var(--charcoal);
     color: var(--white);
@@ -340,18 +359,216 @@ body.dark-theme {
     margin: 0 auto;
 }
 
-/* Responsive Design */
+.footer-links a {
+    color: var(--uranian);
+    text-decoration: none;
+    margin-left: 1rem;
+    transition: opacity 0.3s;
+}
+
+.footer-links a:hover {
+    opacity: 0.8;
+}
+
+/* ===== Disclaimer Page Specific Styles ===== */
+/* Container for disclaimer page */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Disclaimer page section */
+.disclaimer-section {
+    padding: 60px 0;
+}
+
+/* Disclaimer content box */
+.disclaimer-content {
+    background-color: var(--dark-surface);
+    border-radius: 8px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    color: var(--dark-text);
+}
+
+.disclaimer-content h3 {
+    color: var(--uranian);
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+.disclaimer-content p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+    color: var(--dark-text);
+}
+
+.disclaimer-content ul {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.disclaimer-content ul li {
+    margin-bottom: 10px;
+    line-height: 1.5;
+    color: var(--dark-text);
+}
+
+/* Back link button */
+.back-link {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.back-link .btn {
+    background: var(--cornflower);
+    color: var(--white);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.back-link .btn:hover {
+    background: var(--uranian);
+    color: var(--rich-black);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Header styles for disclaimer page */
+header {
+    background: linear-gradient(135deg, var(--cornflower) 0%, var(--cornflower-dark) 100%);
+    color: var(--white);
+    padding: 1rem 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+header .logo h1 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+header a {
+    color: var(--white);
+    text-decoration: none;
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+header nav ul li {
+    margin-left: 1.5rem;
+}
+
+header nav ul li a {
+    color: var(--white);
+    text-decoration: none;
+    transition: opacity 0.3s;
+}
+
+header nav ul li a:hover {
+    opacity: 0.8;
+}
+
+header nav ul li a.active {
+    font-weight: bold;
+    border-bottom: 2px solid var(--white);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Footer styles for disclaimer page */
+footer {
+    background: var(--charcoal);
+    color: var(--white);
+    padding: 2rem 0;
+    margin-top: 2rem;
+}
+
+footer a {
+    color: var(--uranian);
+    text-decoration: none;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-logo h3 {
+    margin-bottom: 0.5rem;
+}
+
+.footer-links h4 {
+    margin-bottom: 1rem;
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-bottom {
+    margin-top: 2rem;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 1rem;
+}
+
+/* ===== Responsive Styles ===== */
 @media (max-width: 768px) {
+    /* Header responsive adjustments */
     .header h1 {
         font-size: 2rem;
     }
     
+    /* Policy grid becomes single column on mobile */
     .policy-grid {
         grid-template-columns: 1fr;
     }
 
+    /* Footer responsive adjustments */
     .footer-content {
         flex-direction: column;
         text-align: center;
+    }
+    
+    /* Disclaimer page header responsive adjustments */
+    header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    header nav ul {
+        margin-top: 1rem;
+        justify-content: center;
+    }
+    
+    header nav ul li:first-child {
+        margin-left: 0;
+    }
+    
+    /* Disclaimer page footer responsive adjustments */
+    .footer-links {
+        margin-top: 1.5rem;
     }
 } 

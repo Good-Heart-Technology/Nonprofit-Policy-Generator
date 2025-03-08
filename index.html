@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nonprofit Policy Generator</title>
+    <!-- Main stylesheet -->
     <link rel="stylesheet" href="styles.css">
-    <!-- Using Font Awesome 6 CDN for more reliable icons -->
+    <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body class="dark-theme">
+    <!-- Header Section -->
     <header class="header">
         <div class="header-content">
             <h1>Nonprofit Policy Generator</h1>
@@ -18,19 +20,15 @@
                     <img src="https://graphics.goodhearttech.org/GHT-AllWhiteLogo-phishsite.png" alt="Good Heart Tech Logo" class="logo">
                 </a>
             </div>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="disclaimer.html">Disclaimer</a></li>
-                </ul>
-            </nav>
         </div>
         <div class="header-pattern"></div>
     </header>
 
+    <!-- Main Content -->
     <main class="main-content">
+        <!-- Policy Generator Tiles -->
         <div class="policy-grid">
-            <!-- Policy Tiles - Each entire tile is now clickable -->
+            <!-- Privacy Policy Generator - Active -->
             <a href="https://privacy.nonprofittools.org" class="policy-tile" target="_blank" rel="noopener">
                 <div class="icon-container">
                     <i class="fa-solid fa-shield-halved"></i>
@@ -41,6 +39,7 @@
                 </div>
             </a>
 
+            <!-- Acceptable Use Policy Generator - Coming Soon -->
             <div class="policy-tile disabled">
                 <div class="icon-container">
                     <i class="fa-solid fa-user-check"></i>
@@ -51,6 +50,7 @@
                 </div>
             </div>
 
+            <!-- AI Policy Generator - Coming Soon -->
             <div class="policy-tile disabled">
                 <div class="icon-container">
                     <i class="fa-solid fa-robot"></i>
@@ -61,6 +61,7 @@
                 </div>
             </div>
 
+            <!-- Mobile Device Policy Generator - Coming Soon -->
             <div class="policy-tile disabled">
                 <div class="icon-container">
                     <i class="fa-solid fa-mobile-screen-button"></i>
@@ -72,21 +73,20 @@
             </div>
         </div>
 
-        <!-- Legal Disclaimer - Moved above the toggle -->
+        <!-- Legal Disclaimer Section -->
         <div class="disclaimer">
             <h2>Important Legal Disclaimer</h2>
-            <p>
-                Laws and regulations can vary significantly by region, jurisdiction, and industry. The generated policies may not be legally compliant in your specific area or for your particular use case.
-            </p>
             <p class="emphasis">
-                We strongly recommend having any generated policy reviewed and updated by qualified legal counsel before implementation or distribution to ensure it meets your specific needs and complies with all applicable laws and regulations.
+                Laws vary by region and industry. Generated policies may not be legally compliant for your use case. We strongly recommend having them reviewed by legal counsel to ensure compliance. Good Heart Tech is not a law firm and does not provide legal advice. Tools and templates are offered without warranty or guarantee of legal compliance.
             </p>
-            <p>
-                Good Heart Tech is not a law firm and does not provide legal advice. The tools and templates provided here come with absolutely no warranty or guarantee of legal compliance.
-            </p>
+            <div class="disclaimer-button-container">
+                <a href="disclaimer.html" class="disclaimer-button">
+                    <i class="fa-solid fa-circle-info"></i> Read our full disclaimer
+                </a>
+            </div>
         </div>
 
-        <!-- FAQ Toggle - Now below the disclaimer with improved appearance and open by default -->
+        <!-- FAQ Section -->
         <div class="faq-section">
             <button class="faq-toggle" onclick="toggleFAQ()">
                 <span>Why do you only offer these policies and not other ones?</span>
@@ -102,16 +102,32 @@
         </div>
     </main>
 
+    <!-- Footer Section -->
     <footer class="footer">
         <div class="footer-content">
             <a href="https://goodhearttech.org/" target="_blank" rel="noopener">
                 <img src="https://graphics.goodhearttech.org/GHT-AllWhiteLogo-phishsite.png" alt="Good Heart Tech Logo" class="logo">
             </a>
             <p>&copy; <span id="current-year"></span> Good Heart Tech. All rights reserved.</p>
-            <p><a href="https://goodheart.tech">Visit Good Heart Tech</a> | <a href="disclaimer.html">Disclaimer</a></p>
+            <div class="footer-links">
+                <a href="disclaimer.html">Disclaimer</a>
+            </div>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- JavaScript -->
+    <script>
+        // Set current year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        
+        // FAQ toggle function
+        function toggleFAQ() {
+            const faqContent = document.getElementById('faq-answer');
+            const toggleIcon = document.querySelector('.toggle-icon');
+            
+            faqContent.classList.toggle('show');
+            toggleIcon.classList.toggle('rotated');
+        }
+    </script>
 </body>
 </html> 
