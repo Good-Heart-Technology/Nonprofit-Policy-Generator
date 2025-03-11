@@ -54,7 +54,7 @@ body {
 
 /* ===== Header Styles ===== */
 .header {
-    background: linear-gradient(135deg, var(--cornflower) 0%, var(--cornflower-dark) 100%);
+    background: var(--charcoal); /* Match footer background color */
     color: var(--white);
     padding: 2.5rem 2rem;
     text-align: center;
