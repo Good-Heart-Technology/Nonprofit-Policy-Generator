@@ -12,7 +12,7 @@ This application provides interactive policy generators for:
 
 - Privacy Policy & Cookies Policy Generator
 - Acceptable Use Policy Generator (Coming Soon)
-- Artificial Intelligence Policy Generator (Coming Soon)
+- Artificial Intelligence Policy Generator
 - Mobile Device Policy Generator (Coming Soon)
 
 ### How It Works
